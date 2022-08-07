@@ -17,18 +17,42 @@
  </head>
  <body>
 	<div id = "cont">
-  <p>Кто хороший мальчик?</p>
+  <p id="text">Кто хороший мальчик?</p>
   <button id="button">
   click me!
+  </button>
+  <button id="stopbtn">
+  stop clicking!
+  </button>
+  <button id="girlbtn">
+  Я дівчина!
   </button>
   </div>
   <script >
   var button = document.getElementById("button").addEventListener("click", goodboi);
-  
+  var stopbtn = document.getElementById("stopbtn").addEventListener("click", stopbt);
+  var girlbtn = document.getElementById("girlbtn").addEventListener("click", forgirls);
   function goodboi() {
 	var answer = document.createElement('p');
 	answer.innerHTML = "ТЫ!";
 	document.getElementById("cont").appendChild(answer);
+  }
+  
+  function stopbt() {
+	document.getElementById("button").disabled = true;
+  }
+  
+  function forgirls() {
+	var p = document.getElementById("text");
+	document.getElementById("cont").removeChild(p);
+	var greet = document.createElement('p');
+	greet.innerHTML = "Гарного дня, красуню!";
+	document.getElementById("cont").appendChild(greet);
+	var img = document.createElement('img');
+	img.src = "https://www.meme-arsenal.com/memes/707d34f2b77d7f040e745f973a035e73.jpg";
+	document.getElementById("cont").appendChild(img);
+	
+	
   }
   
   </script>
