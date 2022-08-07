@@ -27,11 +27,15 @@
   <button id="girlbtn">
   Я дівчина!
   </button>
+   <button id="mars">
+  ♂
+  </button>
   </div>
   <script >
   var button = document.getElementById("button").addEventListener("click", goodboi);
   var stopbtn = document.getElementById("stopbtn").addEventListener("click", stopbt);
   var girlbtn = document.getElementById("girlbtn").addEventListener("click", forgirls);
+  var mars = document.getElementById("mars").addEventListener("click", mars);
   function goodboi() {
 	var answer = document.createElement('p');
 	answer.innerHTML = "ТЫ!";
@@ -54,6 +58,23 @@
 	
 	
   }
+  
+  function mars() {
+	var ricardo = document.createElement('img');
+	ricardo.src = "ricardo.gif";
+	ricardo.width = "400";
+	ricardo.height="400";
+	var ricardo2 = document.createElement('img');
+	ricardo2.src = "ricardo2.gif";
+	ricardo2.width = "400";
+	ricardo2.height="400";
+	document.getElementById("cont").appendChild(ricardo);
+	document.getElementById("cont").appendChild(ricardo2);
+	var aud = new Audio("welcome-to-the-club-buddy.mp3");
+	aud.play();
+	
+  }
+  
   
   </script>
  </body>
