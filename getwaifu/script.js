@@ -7,9 +7,16 @@
 
 
 
+
 function refresh() {
+  var urlSfw = "https://api.waifu.pics/sfw/waifu";
+  var urlNsfw = "https://api.waifu.pics/nsfw/waifu";
+  var nfsw = document.getElementById("switch");
+  var url = nfsw.checked ? urlNsfw : urlSfw;
+  
+
   $.ajax({
-    url: "https://api.waifu.pics/sfw/waifu",
+      url: url,
   })
     .done(function (data) {
       var img = document.createElement("img");
